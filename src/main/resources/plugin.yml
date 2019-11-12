@@ -1,0 +1,7 @@
+name: ChestGacha
+version: ${project.version}
+author: [testusuke]
+main: net.testusuke.chestgacha.chestgacha.ChestGacha
+commands:
+  chestgacha:
+  cgacha:
