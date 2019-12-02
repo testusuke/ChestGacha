@@ -31,7 +31,7 @@ public final class ChestGacha extends JavaPlugin {
     public RunGacha run = new RunGacha(this);
 
     //  PlayerStatus
-    public HashMap<Player, Boolean> PlayerStatus = new HashMap<Player, Boolean>();
+    public HashMap<Player, Boolean> PlayerStatus = new HashMap<>();
 
     //  Config
     public CustomConfig config;
@@ -73,7 +73,7 @@ public final class ChestGacha extends JavaPlugin {
     public void onDisable() {
         // Plugin shutdown logic
         //  Logger
-        getLogger().info("[SignGacha] Disable");
+        getLogger().info("[ChestGacha] Disable");
 
         //  CleanPlayer
         playerInfo.clenPlayer();
