@@ -73,7 +73,7 @@ public final class ChestGacha extends JavaPlugin {
     public void onDisable() {
         // Plugin shutdown logic
         //  Logger
-        getLogger().info("[SignGacha] Disable");
+        getLogger().info("[ChestGacha] Disable");
 
         //  CleanPlayer
         playerInfo.clenPlayer();
