@@ -63,11 +63,15 @@ public class RunGacha {
             itemList.add(chestInv.getItem(i));
         }
 
+        //  Run
+        runGacha(inv, p, itemList);
+
         /*
         ItemStack loreItem = chestInv.getItem(25);
         ItemMeta loreMeta = loreItem.getItemMeta();
         String lore = loreMeta.getDisplayName();
         */
+        /*
         if(chestInv.getItem(25) != null && chestInv.getItem(25).getType() != Material.AIR){
             //  名札か
             ItemStack hitamount = chestInv.getItem(25);
@@ -102,7 +106,7 @@ public class RunGacha {
         }else {
             //  確率なし
             runGacha(inv, p, itemList);
-        }
+        }*/
 
     }
 
@@ -166,6 +170,7 @@ public class RunGacha {
 
     }
 
+    /*
     public void runGacha(Inventory inv,Player p, List<ItemStack> itemList, int superhit, ItemStack superHitItem){
 
 
@@ -210,10 +215,10 @@ public class RunGacha {
 
                             cancel();
 
-                            /*
-                            ItemMeta loreMeta = loreItem.getItemMeta();
-                            String lore = loreMeta.getDisplayName().replace("&","§").replace("%item%", hitMeta.getDisplayName()).replace("%amount%", "" + hitItem.getAmount());
-                            */
+
+                            //ItemMeta loreMeta = loreItem.getItemMeta();
+                            //String lore = loreMeta.getDisplayName().replace("&","§").replace("%item%", hitMeta.getDisplayName()).replace("%amount%", "" + hitItem.getAmount());
+
 
                             if (hitMeta.getDisplayName() == null) {
                                 p.sendMessage(plugin.prefix + "§6おめでとうございます！§e" + hitItem.getType().name() + "§6が" + hitItem.getAmount() + "個当たりました");
@@ -233,10 +238,9 @@ public class RunGacha {
 
                         cancel();
 
-                        /*
-                        ItemMeta loreMeta = loreItem.getItemMeta();
-                        String lore = loreMeta.getDisplayName().replace("&","§").replace("%item%", hitMeta.getDisplayName()).replace("%amount%", "" + hitItem.getAmount());
-                        */
+
+                        //ItemMeta loreMeta = loreItem.getItemMeta();
+                        //String lore = loreMeta.getDisplayName().replace("&","§").replace("%item%", hitMeta.getDisplayName()).replace("%amount%", "" + hitItem.getAmount());
 
                         if (hitMeta.getDisplayName() == null) {
                             p.sendMessage(plugin.prefix + "§6おめでとうございます！§e" + hitItem.getType().name() + "§6が" + hitItem.getAmount() + "個当たりました");
@@ -251,5 +255,6 @@ public class RunGacha {
             }
         }.runTaskTimer(plugin, 1,2);
 
-    }
+
+    }*/
 }
