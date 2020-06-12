@@ -20,7 +20,7 @@ public class PlayerInfo {
     }
 
     //  CleanPlayer
-    public void clenPlayer() {
+    public void cleanPlayer() {
         plugin.PlayerStatus.clear();
         plugin.getLogger().info("CleanPlayer");
     }

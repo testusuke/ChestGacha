@@ -2,10 +2,8 @@ package net.testusuke.chestgacha.chestgacha;
 
 import net.testusuke.chestgacha.chestgacha.Command.CommandClass;
 import net.testusuke.chestgacha.chestgacha.Event.PlayerEventClass;
-import net.testusuke.chestgacha.chestgacha.Manager.CustomConfig;
 import net.testusuke.chestgacha.chestgacha.Module.PlayerInfo;
 import net.testusuke.chestgacha.chestgacha.Module.RunGacha;
-import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -19,7 +17,9 @@ public final class ChestGacha extends JavaPlugin {
 
     //  Prefix
     public String prefix = "§e[ChestGacha]";
+    public String version = "1.0.0";
 
+    public static ChestGacha plugin = null ;
     //  ChestName
     public String ChestName = prefix + "§6ガチャ設定";
 
@@ -33,37 +33,23 @@ public final class ChestGacha extends JavaPlugin {
     //  PlayerStatus
     public HashMap<Player, Boolean> PlayerStatus = new HashMap<>();
 
-    //  Config
-    public CustomConfig config;
-
 
     @Override
     public void onEnable() {
         // Plugin startup logic
+        plugin = this;
         //  Logger
         getLogger().info("==============================");
         getLogger().info("Plugin: ChestGacha");
-        getLogger().info("Ver: 1.0.0  Author: testusuke");
+        getLogger().info("Ver: " + version + "  Author: testusuke");
         getLogger().info("==============================");
-
         //  Command
         getCommand("chestgacha").setExecutor(new CommandClass(this));
         getCommand("cgacha").setExecutor(new CommandClass(this));
-
         //  Event
         getServer().getPluginManager().registerEvents(new PlayerEventClass(this), this);
-
-        /*
-        //  Vault
-        new VaultManager(this);
-        */
-
         //  Config
-        config = new CustomConfig(this);
-
-        //  SaveDefaultConfig
-        config.saveDefaultConfig();
-
+        this.saveDefaultConfig();
         //  PlayerStatus
         playerInfo.loadPlayer();
 
@@ -76,6 +62,10 @@ public final class ChestGacha extends JavaPlugin {
         getLogger().info("[ChestGacha] Disable");
 
         //  CleanPlayer
-        playerInfo.clenPlayer();
+        playerInfo.cleanPlayer();
+    }
+
+    public static ChestGacha getPlugin(){
+        return plugin;
     }
 }
